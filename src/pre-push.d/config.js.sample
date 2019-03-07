@@ -1,0 +1,21 @@
+/*
+ * Copyright (c) George Tryfonas, all rights reserved. Licensed under the MIT license.
+ * See LICENSE in the project root for license information.
+ */
+
+module.exports = {
+    projectName: 'ENTER YOUR PROJECT NAME HERE',
+    activityImageUrl: 'ENTER YOUR ACTIVITY IMAGE URL HERE (OPTIONAL)',
+	themeColor: 'ENTER THE COLOR FOR YOUR TEAMS CARD HERE',
+    hardFail: false, // Set to true to stop push if team cannot be notified
+    webHookUrl: 'ENTER YOUR WEBHOOK URL HERE',
+	
+	// Add one or more triggers
+    triggers: [
+        {
+            remote: 'ENTER YOUR REMOTE NAME HERE',
+            branchName: 'ENTER TRACKED BRANCH NAME HERE',
+            detailsUrl: 'ENTER A URL TO YOUR BUILD SYSTEM HERE (OPTIONAL)'
+        }
+    ]
+}

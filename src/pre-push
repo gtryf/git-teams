@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Copyright (c) George Tryfonas, all rights reserved. Licensed under the MIT license.
+# See LICENSE in the project root for license information.
+
+
+remote="$1"
+url="$2"
+
+while read local_ref local_sha remote_ref remote_sha
+do
+	DIR="$(cd "$(dirname "$0")" && pwd)"
+	$DIR/pre-push.d/notify-teams.js -n $remote -r $remote_ref
+	retVal=$?
+	if [ $retVal -eq 1 ]; then
+		echo "Failed to notify Microsoft Teams channel"
+	fi
+	exit $retVal
+done
+
+exit 0
